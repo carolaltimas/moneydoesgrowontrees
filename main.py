@@ -463,7 +463,6 @@ def night_5():
 def end_of_night():
     print('\n'"You finally fall asleep.")
     print('\n'"The first day is done")
-    print("Money Remaining: ", int(money))
     print("Chequing Account Balance: ", int(chequings_acc))
     print("Savings Account Balance: ", int(savings_acc))
     print("Green Points Collected: ", int(green_points))
@@ -473,7 +472,6 @@ def one_month_later():
     savings_acc = interestformula(savings_acc, int(0.05), (1/12))
 
     print('\n'"One month later...")
-    print("Money Remaining: ", int(money))
     print("Chequing Account Balance: ", int(chequings_acc))
     print("Savings Account Balance: ", int(savings_acc))
     print("Green Points Collected: ", int(green_points))
@@ -482,7 +480,6 @@ def six_months_later():
     global savings_acc
     savings_acc = interestformula(savings_acc, int(0.05),(6/12))
     print('\n'"One month later...")
-    print("Money Remaining: ", int(money))
     print("Chequing Account Balance: ", int(chequings_acc))
     print("Savings Account Balance: ", int(savings_acc))
     print("Green Points Collected: ", int(green_points))
@@ -493,15 +490,14 @@ def one_year_later():
     savings_acc = interestformula(savings_acc, int(0.05),(6/12)) 
 
     print('\n'"One month later...")
-    print("Money Remaining: ", int(money))
     print("Chequing Account Balance: ", int(chequings_acc))
     print("Savings Account Balance: ", int(savings_acc))
     print("Green Points Collected: ", int(green_points))
     
 
 
-def interestformula(money, interest, time):
-    temp = money
+def interestformula(given_money, interest, time):
+    temp = given_money
     inner_equation = 1 + (time/12)
     exponent = (12 * time)
     current_money = inner_equation ** exponent
