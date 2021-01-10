@@ -540,12 +540,13 @@ def reminderCredit():
 
 ## Night ##
 required = "\nUse only a, b, or c\n"  # Cutting down on duplication
+
 # The story is broken into sections, starting with "intro"
 def night():
-    
     print("-" * 80)
     print("""It was a long day at school. You're hungry. You want a snack.""")
     print("You head to your kitchen.")
+    print()
     print("What should you have?")
     print("  a. A homemade chocolate chip cookie! It is the love of your life!")
     print("  b. A bowl of frozen grapes. A little weird, but it tastes like candy!")
@@ -565,16 +566,22 @@ def night():
 def night_2():
     print("-" * 80)
     print("You have some time to kill before dinner. You finished up your homework at school.")
-    print("You decide to watch some TV. You're torn between watching Victorious or iCarly and you only have time for two episodes.")
+    print(
+        "You decide to watch some TV. You're torn between watching Victorious or iCarly and you only have time for two episodes.")
+    print()
     print("You realize that you can use a financial term called Opportunity Cost to decide.")
+    print()
     print("Opportunity Cost is the loss of potential gain from other alternatives when one alternative is chosen.")
-    print("For example, if you only watch Victorious, the opportunity cost is two episodes of iCarly, since you would be missing out on watching two episodes of iCarly")
-    print("For example, if you only pick iCarly, the opportunity cost is two episodes of Victorious.")
+    print()
+    print(
+        " For example, if you only watch Victorious, the opportunity cost is two episodes of iCarly, since you would be missing out on watching two episodes of iCarly")
+    print(" For example, if you only pick iCarly, the opportunity cost is two episodes of Victorious.")
+    print()
     print("What should you do?")
     print("  a. Watch two episodes of Victorious")
     print("  b. Watch two episodes of iCarly")
     print("  c. Watch one episode of iCarly and one episode of Victorious")
-    
+
     choice = input(">>> ")  # input of the choice
     if choice in answer_A:
         print("Great choice! You spend time singing along to the songs!")
@@ -585,7 +592,7 @@ def night_2():
         print("You spend time singing along to the songs and your sister Jane even comes to watch!")
         night_3()
     elif choice in answer_C:
-        print("Awesome choice! iCarly is showing that episode where her room is redone") 
+        print("Awesome choice! iCarly is showing that episode where her room is redone")
         print("Victorious even shows your favourite episode!")
         night_3()
     else:
@@ -595,21 +602,25 @@ def night_2():
 
 # night 3 action
 def night_3():
+    print()
     print("-" * 80)
     print("It's dinnertime. You leave the TV room, but forget to turn off the lights.")
-    print("You're almost at the dinner table, but you can go back and turn off the lights. What will you do?")
+    print("You're almost at the dinner table, but you can go back and turn off the lights.")
+    print()
     print("What will you do?")
     print("  a. Go back and turn off the lights.")
     print("  b. Ignore the lights and go have dinner.")
     choice = input(">>> ")  # input of the choice
     global green_points
     if choice in answer_A:
-        print("""Awesome choice! Turning off the lights is one of the small decisions that helps the environment every day!""")
+        print(
+            """Awesome choice! Turning off the lights is one of the small decisions that helps the environment every day!""")
         print("""You get one green point!""")
         green_points = green_points + 1
         night_4()
     elif choice in answer_B:
-        print(""" The lights shine through the door of the TV room. Your sister Jane notices and goes to turn them off.""")
+        print(
+            """The lights shine through the door of the TV room. Your sister Jane notices and goes to turn them off.""")
         print("""You should have turned them off earlier. You lose one green point.""")
         green_points = green_points - 1
         night_4()
@@ -623,11 +634,16 @@ def night_4():
     print("-" * 80)
     print("It's getting late. You're about to head to bed, but your sister Jane stops you in the corridor.")
     print("She's talking about how she wants to get the ps5 again.This is the only topic on her mind these days. ")
-    print("Your mom gave you each some Christmas money to buy things, but Jane doesn't have enough for the ps5 yet and you're in charge on the finances")
+    print()
+    print(
+        "Your mom gave you each some Christmas money to buy things, but Jane doesn't have enough for the ps5 yet and you're in charge on the finances")
+    print()
     print("Her birthday's coming up, so she'll probably have enough soon. Her tone changes. ")
-    print("I really want to get the WII as well. Could I buy that tonight?" "What should you do?")
+    print()
+    print("I really want to get the WII as well. Could I buy that tonight? What should you do?")
     print("  a. You remind Jane of her long term goal of getting the ps5 and tell her to hold off on getting the WII. ")
-    print("  b. You cave and tell her to get the WII. She probably won't be able to buy the ps5 later on, but who cares about her long term goal? ")
+    print(
+        "  b. You cave and tell her to get the WII. She probably won't be able to buy the ps5 later on, but who cares about her long term goal? ")
     choice = input(">>> ")  # input of the choice
     if choice in answer_A:
         print(
@@ -635,8 +651,10 @@ def night_4():
         )
         night_5()
     elif choice in answer_B:
-        print("""You begin the process of buying the WII online. Once bought, Jane remembers how much she wanted the ps5 and regrets the WII decision.""")
-        print("""Jane realizes that she completely forgot her longterm goal and is a little disappointed, but she's okay with getting the WII in the end.""")
+        print(
+            """You begin the process of buying the WII online. Once bought, Jane remembers how much she wanted the ps5 and regrets the WII decision.""")
+        print(
+            """Jane realizes that she completely forgot her longterm goal and is a little disappointed, but she's okay with getting the WII in the end.""")
         night_5()
     else:
         print(required)
@@ -645,10 +663,14 @@ def night_4():
 
 # night 5 action
 def night_5():
+    print()
     print("-" * 80)
-    print("""You've finally made it to bed. You lay down under the covers and notice that you're feeling a little cold.""")
+    print(
+        """You've finally made it to bed. You lay down under the covers and notice that you're feeling a little cold.""")
     print("""BURRRRRR. It's not winter-level cold, but it's going to bother you.""")
+    print()
     print("""You decide to do something about it, since you know that you can't sleep when it's cold.""")
+    print()
     print("""What do you do?""")
     print("  a. Grab a warm blanket from the linen closet.")
     print("  b. Change into your favourite warm pjs.")
@@ -684,14 +706,19 @@ def night_5():
 
 def end_of_night():
     print('\n'"You finally fall asleep.")
+    print("-" * 80)
+    print("-" * 80)
     print('\n'"The first day is done")
     print("Chequing Account Balance: ", float(chequings_acc))
     print("Savings Account Balance: ", float(savings_acc))
     print("Green Points Collected: ", float(green_points))
 
+
 def one_month_later():
     global savings_acc
-    savings_acc = interestformula(savings_acc, float(0.05), (1/12))
+    savings_acc = interestformula(savings_acc, float(0.05), (1 / 12))
+    print("-" * 80)
+    print("-" * 80)
 
     print('\n'"If you continue your actions for a month. Your account would look like...")
     print("Chequing Account Balance: ", float(chequings_acc))
@@ -699,37 +726,36 @@ def one_month_later():
     temp_green_points = green_points * 30 * 1
     print("Green Points Collected: ", float(temp_green_points))
 
+
 def six_months_later():
     global savings_acc
-    savings_acc = interestformula(savings_acc, float(0.01),(6/12))
+    savings_acc = interestformula(savings_acc, float(0.01), (6 / 12))
+    print("-" * 80)
     print('\n'"If you continue your actions for six months. Your account would look like...")
     print("Chequing Account Balance: ", float(chequings_acc))
     print("Savings Account Balance: ", float(savings_acc))
     temp_green_points = green_points * 30 * 6
     print("Green Points Collected: ", float(temp_green_points))
-    
+
 
 def one_year_later():
     global savings_acc
-    savings_acc = interestformula(savings_acc, float(0.01),(6/12)) 
-
+    savings_acc = interestformula(savings_acc, float(0.01), (6 / 12))
+    print("-" * 80)
     print('\n'"If you continue your actions for a year. Your account would look like...")
     print("Chequing Account Balance: ", float(chequings_acc))
     print("Savings Account Balance: ", float(savings_acc))
     temp_green_points = green_points * 30 * 12
     print("Green Points Collected: ", float(temp_green_points))
-    
 
 
 def interestformula(given_money, interest, time):
     temp = given_money
-    inner_equation = 1 + (time/12)
+    inner_equation = 1 + (time / 12)
     exponent = (12 * time)
     current_money = inner_equation ** exponent
     current_money = temp * current_money
     return current_money
 
 
-
 main()
-
