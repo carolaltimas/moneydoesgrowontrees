@@ -2,7 +2,7 @@
 ## Authors: Aranya Sutharsan, Rinoa Malapaya Noshin Rahman, Carol Altimas ##
 
 import time  # Imports a module to add a pause
-import morning.py
+from morning import *
 
 # User Responses
 yes = ["Y", "y", "yes"]
@@ -52,7 +52,7 @@ def intro():
 
     print("As you play along in this game you will be collecting and losing money based on the financial "
           "decisions you made.")
-    print("As well as collecting and losing green points based on your environment decisions.")
+    print("As well as collecting and losing green points based on your environmental decisions.")
     print()
 
     print("You will be given 5 Green points from the start :)")
@@ -61,12 +61,12 @@ def intro():
 
     print("Before the game starts, here are some terminology!")
     print()
-    print("1. Savings accounts are bank accounts that pay interest on the money you deposit.")
+    print("  1. Savings accounts are bank accounts that pay interest on the money you deposit.")
     print()
-    print("2. Interest is your reward for steady and consistent saving!")
+    print("  2. Interest is your reward for steady and consistent saving!")
     print("   - the more money you put in, the more interest you earn, and the more your balance will grow.")
     print()
-    print("3. High-growth interest is still a savings account")
+    print("  3. High-growth interest is still a savings account")
     print("   - however, it pays a little bit more interest compared to a regular savings account!")
     print("-" * 80)
     print("Now let's start the game!")
@@ -76,27 +76,25 @@ def intro():
 def verifyIntro():
     print("How much would you like to set aside?")
     extraChoice = input(">>> ")
-    global money
 
     if extraChoice.isdigit():
 
-        if int(extraChoice) < 0 or int(extraChoice) == 0:
+        if float(extraChoice) < 0 or float(extraChoice) == 0:
             print("Invalid input. Please enter an amount greater than 0.")
             print()
             verifyIntro()
 
-        if int(extraChoice) > int(money):
+        if float(extraChoice) > 1000:
             print("Invalid input. Please enter an amount less than 1000.")
             print()
             verifyIntro()
 
-        if 0 < int(extraChoice) <= int(money):
+        if 0 < float(extraChoice) <= 1000:
             print("-" * 80)
             global savings_acc
             global chequings_acc
-            savings_acc = int(extraChoice)
-            money = 1000 - savings_acc
-            chequings_acc = int(money)
+            savings_acc = float(extraChoice)
+            chequings_acc = 1000 - savings_acc
             morning1()
 
     else:
@@ -207,6 +205,7 @@ def morning2GoodQn():
 
     else:
         print("Invalid input! Please type yes/no OR y/n")
+        print()
         morning2GoodQn()
 
 
@@ -228,35 +227,32 @@ def morning3Bad():
 def morning3BadQn():
     print("What would you like to have?")
     choice = input(">>> ")
-    global money
     global chequings_acc
 
     if choice.lower() in answer_A:
         print("Note: Nice choice! Bagel cost $2.20 plus tax this would equal up to $2.5.")
-        money = int(money) - 2.20
-        chequings_acc = int(chequings_acc) - 2.20
+        chequings_acc = float(chequings_acc) - 2.50
         print("-" * 80)
         morning3Good()
 
     elif choice.lower() in answer_B:
         print("Great choice to boost up your energy for the day!")
-        print("   - Coffee cost $1.60 plus tax this would equal to $1.60.!")
+        print("   - Coffee cost $1.60 plus tax this would equal to $1.80.!")
         print("   - This is the cheapest option too! Nice job :)")
-        money = int(money) - 1.60
-        chequings_acc = int(chequings_acc) - 1.60
+        chequings_acc = float(chequings_acc) - 1.80
         print("-" * 80)
         morning3Good()
 
     elif choice.lower() in answer_C:
         print("You’re set for the day!")
-        print("   - Although this combo might seem like a steal, the final is actually $3.50! Not bad.")
-        money = int(money) - 3.50
-        chequings_acc = int(chequings_acc) - 3.50
+        print("   - Although this combo might seem like a steal, the final is actually $3.95! Not bad.")
+        chequings_acc = float(chequings_acc) - 3.95
         print("-" * 80)
         morning3Good()
 
     else:
         print("Invalid input! Please type a, b or c")
+        print()
         morning3BadQn()
 
 
@@ -267,9 +263,9 @@ def morning4():
 
 def morning4Qn():
     print("What would you do? ")
-    print("  a. Tell the student to pick up the garbage")
-    print("  b. You throw away classmate garbage")
-    print("  c. Ignore the garbage and walk away")
+    print("a. Tell the student to pick up the garbage")
+    print("b. You throw away classmate's garbage")
+    print("c. Ignore the garbage and walk away")
     choice = input(">>> ")
     global green_points
 
@@ -300,18 +296,14 @@ def morning4Qn():
 
     else:
         print("Invalid input! Please type a, b or c")
+        print()
         morning4Qn()
 
 
 def morningSummary():
-    print("Money Remaining: ", int(money))
-    print("Chequing Account Balance: ", int(chequings_acc))
-    print("Savings Account Balance: ", int(savings_acc))
-    print("Green Points Collected: ", int(green_points))
-
-
-
-
+    print("Chequing Account Balance: ", float(chequings_acc))
+    print("Savings Account Balance: ", float(savings_acc))
+    print("Green Points Collected: ", float(green_points))
 
 
 
@@ -465,36 +457,39 @@ def night_5():
 def end_of_night():
     print('\n'"You finally fall asleep.")
     print('\n'"The first day is done")
-    print("Chequing Account Balance: ", int(chequings_acc))
-    print("Savings Account Balance: ", int(savings_acc))
-    print("Green Points Collected: ", int(green_points))
+    print("Chequing Account Balance: ", float(chequings_acc))
+    print("Savings Account Balance: ", float(savings_acc))
+    print("Green Points Collected: ", float(green_points))
 
 def one_month_later():
     global savings_acc
-    savings_acc = interestformula(savings_acc, int(0.05), (1/12))
+    savings_acc = interestformula(savings_acc, float(0.05), (1/12))
 
-    print('\n'"One month later...")
-    print("Chequing Account Balance: ", int(chequings_acc))
-    print("Savings Account Balance: ", int(savings_acc))
-    print("Green Points Collected: ", int(green_points))
+    print('\n'"If you continue your actions for a month. Your account would look like...")
+    print("Chequing Account Balance: ", float(chequings_acc))
+    print("Savings Account Balance: ", float(savings_acc))
+    temp_green_points = green_points * 30 * 1
+    print("Green Points Collected: ", float(temp_green_points))
 
 def six_months_later():
     global savings_acc
-    savings_acc = interestformula(savings_acc, int(0.05),(6/12))
-    print('\n'"One month later...")
-    print("Chequing Account Balance: ", int(chequings_acc))
-    print("Savings Account Balance: ", int(savings_acc))
-    print("Green Points Collected: ", int(green_points))
+    savings_acc = interestformula(savings_acc, float(0.01),(6/12))
+    print('\n'"If you continue your actions for six months. Your account would look like...")
+    print("Chequing Account Balance: ", float(chequings_acc))
+    print("Savings Account Balance: ", float(savings_acc))
+    temp_green_points = green_points * 30 * 6
+    print("Green Points Collected: ", float(temp_green_points))
     
 
 def one_year_later():
     global savings_acc
-    savings_acc = interestformula(savings_acc, int(0.05),(6/12)) 
+    savings_acc = interestformula(savings_acc, float(0.01),(6/12)) 
 
-    print('\n'"One month later...")
-    print("Chequing Account Balance: ", int(chequings_acc))
-    print("Savings Account Balance: ", int(savings_acc))
-    print("Green Points Collected: ", int(green_points))
+    print('\n'"If you continue your actions for a year. Your account would look like...")
+    print("Chequing Account Balance: ", float(chequings_acc))
+    print("Savings Account Balance: ", float(savings_acc))
+    temp_green_points = green_points * 30 * 12
+    print("Green Points Collected: ", float(temp_green_points))
     
 
 
@@ -505,6 +500,8 @@ def interestformula(given_money, interest, time):
     current_money = inner_equation ** exponent
     current_money = temp * current_money
     return current_money
+
+
 
 main()
 

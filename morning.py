@@ -14,6 +14,8 @@ chequings_acc = 1000
 savings_acc = 0
 money = 0
 reward_pts = 0
+credit_balance = 0
+credit_avail = 0
 
 
 ## Introduction + Morning##
@@ -311,7 +313,7 @@ def morningSummary():
 
 
 def afternoon():
-    print( " Now that you've developed ideal basic spending and saving habits, your parents have decided to provide you with your very first Credit Card! ")
+    print("Now that you've developed ideal basic spending and saving habits, your parents have decided to provide you with your very first Credit Card! "'\n')
     print("""Here is what you should know about Credit:
     1. The money on your credit card is not your money, but the bank's money so it isn't free.
     When you use your Credit Card to make purchases, the bank is letting you borrow some amount of money to spend
@@ -327,16 +329,17 @@ def afternoon():
     make payments, outstanding loans, your available credit etc.) It ranges on average from 300 to 850, with higher
     credit scores being better. 
     Having a good credit score gives you benefits such as approval for loans in the future for a mortgage for a new house
-    or buying a new car, better interest rates on your loans and more.""")
+    or buying a new car, better interest rates on your loans and more."""'\n')
     afternoon1()
     global credit_balance
 
 
 def afternoon1():
+    print("-" * 80)
     print("""The Spring Homecoming dance is coming up and you don't have a dress for the occasion. Your friends offer you
-          some dresses for you to borrow or offer to go to the mall this afternoon so you could buy a brand new one yourself. You choose:
-          A. Stick with some existing options for dresses from your kind friends.
-          B. Go to the mall with them so you can all purchase a new one for the dance.""")
+    some dresses for you to borrow or offer to go to the mall this afternoon so you could buy a brand new one yourself. You choose:
+          a. Stick with some existing options for dresses from your kind friends.
+          b. Go to the mall with them so you can all purchase a new one for the dance.""")
     choice = input(">>> ")
     if choice.lower() in answer_A:
         option_oldDress()
@@ -350,6 +353,7 @@ def afternoon1():
 def option_oldDress():
     print("""Great choice! You saved money buy choosing not to buy a new dress and rather borrow one instead.
     Additionally, by not having to travel to the mall, you reduce your carbon emissions by saving your fuel.""")
+    global green_points
     green_points += 5
     print("Below are your stats: ")
     morningSummary()
@@ -359,6 +363,7 @@ def option_oldDress():
 def option_newDress():
     print(""" Sounds fun! Although there was a missed opportunity to save money on purchasing a new dress entirely for one day, we can continue
     finding other options to be financially smart! :)""")
+    global green_points
     green_points -=2
     morningSummary()
     afternoon2()
