@@ -4,11 +4,11 @@
 import time  # Imports a module to add a pause
 
 # User Responses
+yes = ["Y", "y", "yes"]
+no = ["N", "n", "no"]
 answer_A = ["A", "a"]
 answer_B = ["B", "b"]
 answer_C = ["C", "c"]
-yes = ["Y", "y", "yes"]
-no = ["N", "n", "no"]
 
 # Variables for the game
 green_points = 0
@@ -32,9 +32,9 @@ def main():
     global credit_avail
     green_points = 5
     money = 1000
-    answer_A = ["a"]
-    answer_B = ["b"]
-    answer_C = ["c"]
+    answer_A = ["A", "a"]
+    answer_B = ["B", "b"]
+    answer_C = ["C", "c"]
     yes = ["y", "yes"]
     no = ["n", "no"]
     intro()
@@ -262,9 +262,9 @@ def morning4():
 
 def morning4Qn():
     print("What would you do? ")
-    print("a. Tell the student to pick up the garbage")
-    print("b. You throw away classmate garbage")
-    print("c. Ignore the garbage and walk away")
+    print("  a. Tell the student to pick up the garbage")
+    print("  b. You throw away classmate garbage")
+    print("  c. Ignore the garbage and walk away")
     choice = input(">>> ")
     global green_points
 
@@ -312,12 +312,16 @@ def morningSummary():
 
 ## Afternoon ##
 
+
 ## Night ##
 required = "\nUse only a, b, or c\n"  # Cutting down on duplication
 # The story is broken into sections, starting with "intro"
 def night():
+    
     print("-" * 80)
-    print(""" It was a long day at school. You're hungry. You want a snack. You head to your kitchen.What should you have? """)
+    print("""It was a long day at school. You're hungry. You want a snack.""")
+    print("You head to your kitchen.")
+    print("What should you have?")
     print("  a. A homemade chocolate chip cookie! It is the love of your life!")
     print("  b. A bowl of frozen grapes. A little weird, but it tastes like candy!")
     choice = input(">>> ")  # input of the choice
@@ -335,25 +339,29 @@ def night():
 # next action is
 def night_2():
     print("-" * 80)
-    print("""You have some time to kill before dinner. You finished up your homework at school. You decide to watch some TV. You're torn between watching Victorious or iCarly. You realize that you could use both or either, but you only have time for two episodes. You remember a principle you learned 
-     at school called "Opportunity Cost." It is the loss of potential gain from other alternatives when one alternative is chosen. If you only watch Victorious, the opportunity cost is watching two episodes of iCarly. If you only pick iCarly, the opportunity cost is 
-     two episodes of Victorious. You're a little confused on what to pick. What will you do?""")
+    print("You have some time to kill before dinner. You finished up your homework at school.")
+    print("You decide to watch some TV. You're torn between watching Victorious or iCarly and you only have time for two episodes.")
+    print("You realize that you can use a financial term called Opportunity Cost to decide.")
+    print("Opportunity Cost is the loss of potential gain from other alternatives when one alternative is chosen.")
+    print("For example, if you only watch Victorious, the opportunity cost is two episodes of iCarly, since you would be missing out on watching two episodes of iCarly")
+    print("For example, if you only pick iCarly, the opportunity cost is two episodes of Victorious.")
+    print("What should you do?")
     print("  a. Watch two episodes of Victorious")
     print("  b. Watch two episodes of iCarly")
     print("  c. Watch one episode of iCarly and one episode of Victorious")
     
     choice = input(">>> ")  # input of the choice
     if choice in answer_A:
-        print("""Great choice! You love Victorious! You spend time singing along to the songs and 
-        your sister Jane even comes to join you!""")
+        print("Great choice! You spend time singing along to the songs!")
+        print("Your sister Jane even comes and sings along")
         night_3()
     elif choice in answer_B:
-        print("""Awesome choice! iCarly is showing that episode where her room is redone!  
-        You spend time singing along to the songs and your sister Jane even comes to watch!""")
+        print("Awesome choice! iCarly is showing that episode where her room is redone!")
+        print("You spend time singing along to the songs and your sister Jane even comes to watch!")
         night_3()
     elif choice in answer_C:
-        print("""Awesome choice! iCarly is showing that episode where her room is redone 
-        and Victorious is showing your favourite episode!""")
+        print("Awesome choice! iCarly is showing that episode where her room is redone") 
+        print("Victorious even shows your favourite episode!")
         night_3()
     else:
         print(required)
@@ -363,18 +371,21 @@ def night_2():
 # night 3 action
 def night_3():
     print("-" * 80)
-    print("""It's dinnertime. You leave the TV room, but forget to turn off the lights. You're almost at the dinnertable, but you can go back and turn off the lights. What will you do?"""
-    )
+    print("It's dinnertime. You leave the TV room, but forget to turn off the lights.")
+    print("You're almost at the dinner table, but you can go back and turn off the lights. What will you do?")
+    print("What will you do?")
     print("  a. Go back and turn off the lights.")
     print("  b. Ignore the lights and go have dinner.")
     choice = input(">>> ")  # input of the choice
     global green_points
     if choice in answer_A:
-        print("""Awesome choice! Turning off the lights is one of the small decisions that helps the environment every day! You get one green point!""")
+        print("""Awesome choice! Turning off the lights is one of the small decisions that helps the environment every day!""")
+        print("""You get one green point!""")
         green_points = green_points + 1
         night_4()
     elif choice in answer_B:
-        print(""" The lights shine through the door of the TV room. Your sister Jane notices and goes to turn them off. You should have turned them off earlier. You lose one green point.""")
+        print(""" The lights shine through the door of the TV room. Your sister Jane notices and goes to turn them off.""")
+        print("""You should have turned them off earlier. You lose one green point.""")
         green_points = green_points - 1
         night_4()
     else:
@@ -385,9 +396,11 @@ def night_3():
 # night 4 action
 def night_4():
     print("-" * 80)
-    print(""" It's getting late. You're about to head to bed, but your sister Jane stops you in the corridor. She's talking about how she wants to get the ps5 again.
-  This is the only topic on her mind these days. Your mom gave you each some Christmas money to buy things, but Jane doesn't have enough for the ps5 yet.
-  Her birthday's coming up, so she'll probably have enough soon. Her tone changes. "I really want to get the WII as well. Could I buy that tonight?" What should you do? """)
+    print("It's getting late. You're about to head to bed, but your sister Jane stops you in the corridor.")
+    print("She's talking about how she wants to get the ps5 again.This is the only topic on her mind these days. ")
+    print("Your mom gave you each some Christmas money to buy things, but Jane doesn't have enough for the ps5 yet and you're in charge on the finances")
+    print("Her birthday's coming up, so she'll probably have enough soon. Her tone changes. ")
+    print("I really want to get the WII as well. Could I buy that tonight?" "What should you do?")
     print("  a. You remind Jane of her long term goal of getting the ps5 and tell her to hold off on getting the WII. ")
     print("  b. You cave and tell her to get the WII. She probably won't be able to buy the ps5 later on, but who cares about her long term goal? ")
     choice = input(">>> ")  # input of the choice
@@ -397,10 +410,8 @@ def night_4():
         )
         night_5()
     elif choice in answer_B:
-        print(
-            """You begin the process of buying the WII online. Once bought, Jane remembers how much she wanted the ps5 and regrets the WII decision.
-    Jane realizes that she completely forgot her longterm goal and is a little disappointed, but she's okay with getting the WII in the end."""
-        )
+        print("""You begin the process of buying the WII online. Once bought, Jane remembers how much she wanted the ps5 and regrets the WII decision.""")
+        print("""Jane realizes that she completely forgot her longterm goal and is a little disappointed, but she's okay with getting the WII in the end.""")
         night_5()
     else:
         print(required)
@@ -410,9 +421,10 @@ def night_4():
 # night 5 action
 def night_5():
     print("-" * 80)
-    print("""  You've finally made it to bed. You lay down under the covers and notice that you're feeling a little cold. BURRRRRR. It's not winter-level cold, but it's going to bother you. You decide to do something about it, 
-    since you know that you can't sleep when it's cold. You probably could do without turning on the heat. """
-    )
+    print("""You've finally made it to bed. You lay down under the covers and notice that you're feeling a little cold.""")
+    print("""BURRRRRR. It's not winter-level cold, but it's going to bother you.""")
+    print("""You decide to do something about it, since you know that you can't sleep when it's cold.""")
+    print("""What do you do?""")
     print("  a. Grab a warm blanket from the linen closet.")
     print("  b. Change into your favourite warm pjs.")
     print("  c. Turn up the heat.")
@@ -446,14 +458,12 @@ def night_5():
 
 
 def end_of_night():
-    print('\n'"The day is done!")
+    print('\n'"You finally fall asleep.")
+    print('\n'"The first day is done")
     print("Money Remaining: ", int(money))
     print("Chequing Account Balance: ", int(chequings_acc))
     print("Savings Account Balance: ", int(savings_acc))
     print("Green Points Collected: ", int(green_points))
-
-    
-    
 
 main()
 
