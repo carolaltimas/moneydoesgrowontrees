@@ -51,7 +51,7 @@ def main():
 
 
 def intro():
-    print("Welcome to Money Does Grows On Trees!")
+    print("Welcome to Money Does Grow On Trees!")
     print("-" * 80)
     time.sleep(1)
 
