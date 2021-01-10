@@ -2,6 +2,7 @@
 ## Authors: Aranya Sutharsan, Rinoa Malapaya Noshin Rahman, Carol Altimas ##
 
 import time  # Imports a module to add a pause
+import morning.py
 
 # User Responses
 yes = ["Y", "y", "yes"]
@@ -38,6 +39,7 @@ def main():
     yes = ["y", "yes"]
     no = ["n", "no"]
     intro()
+    afternoon()
     night()
     one_month_later()
     six_months_later()

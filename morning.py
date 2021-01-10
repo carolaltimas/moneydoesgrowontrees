@@ -530,4 +530,3 @@ def reminderCredit():
         print("""You are in a good position with your Credit! If you do use it later on, try to pay it off within the first 21 days to avoid
              interest payments and maintain a good credit score, which will help you for years to come.""")
 
-main()
