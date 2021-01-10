@@ -42,9 +42,9 @@ def main():
     answer_C = ["C", "c"]
     yes = ["y", "yes"]
     no = ["n", "no"]
-    #intro()
+    intro()
     afternoon()
-    #night()
+    night()
     one_month_later()
     six_months_later()
     one_year_later()
@@ -456,7 +456,7 @@ def option_blackDress():
     print("  a. Debit Card")
     print("  b. Credit Card")
     choice = input(">>> ")
-    
+
     global credit_avail
     global credit_balance
     global chequings_acc
@@ -482,12 +482,12 @@ def afternoon3():
     print("-" * 80)
     print("As you and your friends leave the mall, you pass by other shops and see new headphones on sale at The Source on your right.")
     print("On your left, you see some heels in the showroom to go with your new dress for the dance that are prettier than the ones you have at home, but they do match.") 
-    print("Sony Headphones -- $50")
+    print('\n'"Sony Headphones -- $50")
     print("High-heels -- $30") 
 
-    print("You still have a lot of money left on your credit card and a bit more time to spend before you need to be home.")
+    print('\n'"You still have a lot of money left on your credit card and a bit more time to spend before you need to be home.")
 
-    print("How would you like to pay?")
+    print('\n'"How would you like to pay?")
     print("  a. Take advantage of the deal and purchase the headphones")
     print("  b. Be a showstopper at the dance with those new shoes.")
     print("  c. Buy neither and keep walking.")
