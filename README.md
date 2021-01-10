@@ -3,7 +3,7 @@ A text-based role-playing game aiming to educate younger teens about good financ
 
 ## Demo 
 
-https://trinket.io/python3/f00d595483?outputOnly=true&runOption=run
+https://navy-noshin-gmail-com.trinket.io/sites/money-does-grow-on-trees
 
 ## Getting Started 
 
