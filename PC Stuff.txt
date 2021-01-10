@@ -1,0 +1,33 @@
+
+_________________________________________________________________________
+
+Check GPU clearance
+
+Find best GPU Cooler
+
+Check CPU cooler clearance
+
+Check PSU clerance
+
+Check PSU wattage
+
+GPU Cables
+
+May need to update BIOS
+
+________________________________________________________________________
+
+Place mobo in the case and see if front panel i/o, pcie cable, and
+cpu cable fit. If not, plug them in before or just route them through
+
+rgb fans same orientation
+
+Plug ssd in sata 0 or 1
+
+Initialize HDD
+
+Check USB
+
+
+
+
