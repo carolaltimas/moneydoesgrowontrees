@@ -263,9 +263,9 @@ def morning4():
 
 def morning4Qn():
     print("What would you do? ")
-    print("a. Tell the student to pick up the garbage")
-    print("b. You throw away classmate's garbage")
-    print("c. Ignore the garbage and walk away")
+    print("  a. Tell the student to pick up the garbage")
+    print("  b. You throw away classmate's garbage")
+    print("  c. Ignore the garbage and walk away")
     choice = input(">>> ")
     global green_points
 
@@ -308,6 +308,227 @@ def morningSummary():
 
 
 ## Afternoon ##
+def afternoon():
+    print("Now that you've developed ideal basic spending and saving habits, your parents have decided to provide you with your very first Credit Card! "'\n')
+    print("Here is what you should know about Credit:")
+    print("  1. The money on your credit card is not your money, but the bank's money so it isn't free.")
+    print("When you use your Credit Card to make purchases, the bank is letting you borrow some amount of money to spend that must be paid back eventually.")
+    print(" After the 21 day grace period, the longer it takes you to pay back the balance, the balance, the more the interest will add up.")
+
+    print("  2. There's a limit to HOW MUCH you can purchase on your credit card.")
+    print("It is known as a credit limit ($500 in your case) and is the maximum amount of money you can borrow at a time from the bank.")
+    print("Keeping a low credit card balance makes it easier to pay off and build a better credit history.")
+
+    print("  3. You're being graded.")
+    print("Everybody who uses a credit card has a credit score which is based on your credit card history (how frequently you make payments, outstanding loans, your available credit etc.)")
+    print("It ranges on average from 300 to 850, with higher credit scores being better.")
+    print("Having a good credit score gives you benefits such as approval for loans in the future for a mortgage for a new houseor buying a new car, better interest rates on your loans and more."'\n')
+    
+    global credit_balance
+    afternoon1()
+
+
+def afternoon1():
+    print("-" * 80)
+    print("""The Spring Homecoming dance is coming up and you don't have a dress for the occasion. Your friends offer you
+    some dresses for you to borrow or offer to go to the mall this afternoon so you could buy a brand new one yourself. You choose:
+          a. Stick with some existing options for dresses from your kind friends.
+          b. Go to the mall with them so you can all purchase a new one for the dance.""")
+    choice = input(">>> ")
+    if choice.lower() in answer_A:
+        option_oldDress()
+    elif choice.lower() in answer_B:
+        option_newDress()
+    else:
+        print("Invalid input! Please type yes/no OR y/n")
+        afternoon1()
+
+
+def option_oldDress():
+    print("""Great choice! You saved money buy choosing not to buy a new dress and rather borrow one instead.
+    Additionally, by not having to travel to the mall, you reduce your carbon emissions by saving your fuel.""")
+    global green_points
+    green_points += 5
+    print("Below are your stats: ")
+    morningSummary()
+    afternoon2()
+
+
+def option_newDress():
+    print(""" Sounds fun! Although there was a missed opportunity to save money on purchasing a new dress entirely for one day, we can continue
+    finding other options to be financially smart! :)""")
+    global green_points
+    green_points -=2
+    morningSummary()
+    afternoon2()
+
+def afternoon2():
+    print("""You have settled on 3 options that you love:
+    
+    A. A long red maxi dress at $40.
+    B. A blue bell-sleeve dress at $50.
+    C. A black off-the-shoulder dress at $70. """)
+    choice = input("Which dress do you choose: ")
+
+    if choice.lower() in answer_A:
+        option_redDress()
+    elif choice.lower() in answer_B:
+        option_blueDress()
+    elif choice.lower() in answer_C:
+        option_blackDress()
+    else:
+        print("Invalid input!")
+        afternoon2()
+
+
+def pay():
+    print("""You can choose to complete this purchase with your debit card or your new credit card.
+    Here are some tips to keep in mind.
+
+    Credit: By using a credit card for shopping purchases, you can gain reward points based on each dollar you spent at certain retailers.
+    By accumulating points later on, you can redeem them for other purchases without having to spent real money or use it to pay off your credit card.
+    However you do have to make sure you pay off the purchase eventually with your own money. If you're unable to do so in time, you will be charged interest.
+    -----------------
+    Debit: By using your debit card, you are spending your own money and won't have to worry about any remaining payments after the purchase.
+    But you may miss out on the opportunity to collect reward points.""")
+
+def option_redDress():
+    print("Beautiful choice and economic purchase!")
+    pay()
+    choice = input(""" How  would you like to pay?
+    A. Debit Card
+    B. Credit Card""")
+
+    global credit_avail
+    global credit_balance
+    credit_avail = 500
+
+    if choice.lower() in answer_A:
+        chequings_acc -= 40
+    elif choice.lower() in answer_B:
+        credit_avail -= 40
+        credit_balance += 40
+        reward_pts += 40
+    else:
+        print("Invalid input!")
+        option_redDress()
+
+def option_blueDress():
+    print("Lovely pick at a relatively good price!")
+    pay()
+    choice = input(""" How  would you like to pay?
+    A. Debit Card
+    B. Credit Card""")
+
+    global credit_avail
+    global credit_balance
+    credit_avail = 500
+
+    if choice.lower() in answer_A:
+        chequings_acc -= 50
+    elif choice.lower() in answer_B:
+        credit_avail -= 50
+        credit_balance += 50
+        reward_pts += 50
+    else:
+        print("Invalid input!")
+        option_blueDress()
+
+def option_blackDress():
+    print("Gorgeous......... and bougi ;) We'll be more weary about our next purchases to be better at saving.")
+    pay()
+
+    choice = input(""" How  would you like to pay?
+    A. Debit Card
+    B. Credit Card""")
+
+    global credit_avail
+    global credit_balance
+    credit_avail = 500
+
+    if choice.lower() in answer_A:
+        chequings_acc -= 70
+
+    elif choice.lower() in answer_B:
+        credit_avail -= 70
+        credit_balance += 70
+        reward_pts += 70
+    else:
+        print("Invalid input!")
+        option_blackDress()
+
+
+
+def afternoon3():
+
+    print("""As you and your friends leave the mall, you pass by other shops and see new headphones on sale at The Source on your right, and on 
+    your left, you see some heels in the showroom to go with your new dress for the dance that are prettier than the ones you have at home, but they do match .
+    Sony Headphones -- $50
+    High-heels -- $30
+    
+    You still have a lot of money left on your credit card and a bit more time to spend before you need to be home.
+    What would you like to do?""")
+
+    choice = input(""")
+    A. Take advantage of the deal and purchase the headphones
+    B. Be a showstopper at the dance with those new shoes.
+    C. Buy neither and keep walking. """)
+
+    if choice.lower() in answer_A:
+        headphones()
+    elif choice.lower() in answer_B:
+        shoes()
+    elif choice.lower(0 in answer_C):
+        neither()
+    else:
+        print("Invalid input!")
+        afternoon3()
+
+def headphones():
+    print(""" Exciting purchase! However this was an IMPULSE purchase. 
+    You didn't intend to come to the mall to get headphones. It impulsively felt like you saved money when buying them because they were on sale
+    but you are rather spending more for an item you don't even need and would have saved that money buy not buying it at all.
+    Being aware of impulsive shopping and compulsive shopping will guide you to make better financial habits everyday.
+    """)
+    credit_avail -= 50
+    credit_balance += 50
+    reward_pts += 50
+
+    print("The purchase went to your credit card. Here are your stats: ")
+    morningSummary()
+    reminderCredit()
+
+def shoes():
+    print(""" Outfit all complete! However this was an IMPULSE purchase.
+      You didn't intend to come to the mall to get new shoes and you already had a pair at home.
+      That money would have been better used to pay off your credit card balance later on.
+    Being aware of impulsive shopping and compulsive shopping will guide you to make better financial habits everyday.""")
+    credit_avail -= 20
+    credit_balance += 20
+    reward_pts += 20
+
+    print("The purchase went to your credit card. Here are your stats: ")
+    morningSummary()
+    reminderCredit()
+
+def neither():
+    print(""" Excellent decision! 
+    You avoided making impulsive purchases and are leaving the mall with exactly what you came for. You are developing great financial habits!
+    
+    Here are your stats: """)
+    morningSummary()
+    reminderCredit()
+
+
+def reminderCredit():
+    if credit_balance != 0:
+        print("""As your credit balance is more than 0, make sure you pay off your credit card within the first 21 days of your purchase
+          to make sure you are not charged any interest. After this grace period, you will be charged interest which will make the payments
+           harder to pay off.""")
+    else:
+        print("""You are in a good position with your Credit! If you do use it later on, try to pay it off within the first 21 days to avoid
+             interest payments and maintain a good credit score, which will help you for years to come.""")
+
 
 
 ## Night ##
