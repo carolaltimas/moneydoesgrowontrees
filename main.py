@@ -2,7 +2,6 @@
 ## Authors: Aranya Sutharsan, Rinoa Malapaya Noshin Rahman, Carol Altimas ##
 
 import time  # Imports a module to add a pause
-from morning import *
 
 # User Responses
 yes = ["Y", "y", "yes"]
