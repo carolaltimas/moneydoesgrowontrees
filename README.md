@@ -3,7 +3,7 @@ A text-based role-playing game aiming to educate younger teens about good financ
 
 ## Demo 
 
-https://trinket.io/python3/f82bd204e3?outputOnly=true&runOption=run&showInstructions=true
+https://trinket.io/python3/f00d595483?outputOnly=true&runOption=run
 
 ## Getting Started 
 
@@ -36,6 +36,7 @@ python main.py
 Python
 
 ## Authors
+
 * [Aranya Sutharsan](https://github.com/aranya2020)
 * [Rinoa Malapaya](https://github.com/rinoa25)
 * [Noshin Rahman](https://github.com/Shinless321)
